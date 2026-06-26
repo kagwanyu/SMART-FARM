@@ -26,7 +26,7 @@
 #define LORA_BUSY       PA2
 #define LORA_DIO1       PA1
 
-#define EEPROM_NODE_ID_ADDR   0x00 
+#define NODE-ID   0x01
    //LORA SETUP
 #define LORA_FREQ_MHZ         868.1
 #define LORA_SF               10
@@ -35,7 +35,7 @@
 #define LORA_TX_POWER         22     // dBm, E22 max
   //RETRY SETUP
 #define MAX_RETRIES           7
-#define ACK_TIMEOUT_MS        5000ms
+#define ACK_TIMEOUT_MS        5000 
 
 #define SLEEP_CYCLES          75 //sleep cycles
  //packet structure
@@ -344,11 +344,11 @@ sx1262_sleep();
 void loop() {
   // Read sensors
   uint16_t m1      = analogRead(MOISTURE_1_PIN);
-  uint16_t m2      = analogRead(MOISTURE_2_PIN);
+  
   uint16_t batt_mv = readBatteryMv();
 
   // Transmit with retry
-  sendReading(m1, m2, batt_mv);
+  sendReading(m1, batt_mv);
 
   // Sleep ~10 minutes
   sleepTenMinutes();
