@@ -17,7 +17,7 @@ DB_NAME="smartfarm"
 DB_USER="smartfarm"
 DB_PASS="$(openssl rand -base64 16)"
 API_SECRET="$(openssl rand -base64 32)"
-REPO_URL="https://github.com/kagwanyu/SMART-FARM.git"
+REPO_URL="https://github.com/Lynser/kynext_farm_attiny.git"
 # ────────────────────────────────────────────────
 
 # ── 1. System packages ─────────────────────────
